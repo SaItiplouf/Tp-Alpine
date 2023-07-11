@@ -1,7 +1,6 @@
 <section class="p-8">
   <h2 class="text-3xl text-center font-thin mb-4">Comparateur de Voiture</h2>
-
-  <app-step1 *ngIf="selectedCarId === null"></app-step1>
+  <app-step1 *ngIf="selectedCarId !== null"></app-step1>
   <app-step2></app-step2>
   <app-step3></app-step3>
 </section>

@@ -11,11 +11,12 @@ import { reducer, State as ReducerState } from '../../../reducer';
 export class ConfiguratorComponent implements OnInit {
   selectedCarId!: number | null;
 
-  constructor(private store: Store<ReducerState>) {} 
+  constructor(private store: Store<ReducerState>) {}
 
   ngOnInit() {
+    console.log(this.selectedCarId);
     this.store
-      .pipe(select((state: ReducerState) => state.selectedCarId)) 
+      .pipe(select((state: ReducerState) => state.selectedCarId))
       .subscribe((carId) => {
         this.selectedCarId = carId;
       });
