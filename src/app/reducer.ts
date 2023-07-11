@@ -1,12 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
-import { Step1 } from './actions/config.action';
+import {Step1, Step2} from './actions/config.action';
 
 export interface State {
-  selectedCarId: number | null;
+  selectedCarId: number;
+  Color: string;
 }
 
 export const initialState: State = {
-  selectedCarId: null,
+  selectedCarId: 0,
+  Color: ""
 };
 
 export const reducer = createReducer(
@@ -15,6 +17,12 @@ export const reducer = createReducer(
     return {
       ...state,
       selectedCarId: carId,
+    };
+  }),
+  on(Step2, (state, { Color }) => {
+    return {
+      ...state,
+      Color: Color,
     };
   })
 );
