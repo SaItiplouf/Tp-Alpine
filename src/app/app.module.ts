@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VersionComponent } from './version/version.component';
-import { ColorComponent } from './color/color.component';
-import { RimComponent } from './rim/rim.component';
-import { SummaryComponent } from './summary/summary.component';
+import { VersionComponent } from './component/version/version.component';
+import { ColorComponent } from './component/color/color.component';
+import { RimComponent } from './component/rim/rim.component';
+import { SummaryComponent } from './component/videocard/summary.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SummaryComponent } from './summary/summary.component';
     VersionComponent,
     ColorComponent,
     RimComponent,
-    SummaryComponent
+    SummaryComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
