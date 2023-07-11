@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {Store} from "@ngrx/store";
 import {State} from "../../../reducer";
 import {Router} from "@angular/router";
-import {Step1, Step2} from "../../../actions/config.action";
+import {Step2} from "../../../actions/config.action";
 
 @Component({
   selector: 'app-step2',
