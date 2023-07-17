@@ -5,8 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VersionComponent } from './component/version/version.component';
-import { ColorComponent } from '../app/component/config/color/color.component';
-import { RimComponent } from '../app/component/config/rim/rim.component';
+
 import { SummaryComponent } from './component/videocard/summary.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -23,8 +22,6 @@ import {HttpClientModule} from "@angular/common/http";
   declarations: [
     AppComponent,
     VersionComponent,
-    ColorComponent,
-    RimComponent,
     SummaryComponent,
     NavbarComponent,
     FooterComponent,
