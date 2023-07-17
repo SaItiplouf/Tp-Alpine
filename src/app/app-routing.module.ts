@@ -7,6 +7,7 @@ import {Step2Component} from "./component/config/step2/step2.component";
 import {Step3Component} from "./component/config/step3/step3.component";
 import {Step4Component} from "./component/config/step4/step4.component";
 import {Step5Component} from "./component/config/step5/step5.component";
+import {Step6Component} from "./component/config/step6/step6.component";
 
 const routes: Routes = [
   { path: '', component: Step1Component, title: 'Step1'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'step3', component: Step3Component, title: 'Step3'},
   { path: 'step4', component: Step4Component, title: 'Step4'},
   { path: 'step5', component: Step5Component, title: 'Step5'},
+  { path: 'step6', component: Step6Component, title: 'Step6'},
 ];
 
 @NgModule({

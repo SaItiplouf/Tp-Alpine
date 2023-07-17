@@ -18,6 +18,8 @@ import { Step5Component } from './component/config/step5/step5.component';
 import { Step6Component } from './component/config/step6/step6.component';
 import {HttpClientModule} from "@angular/common/http";
 import { reducer } from './reducer';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -33,12 +35,17 @@ import { reducer } from './reducer';
     Step4Component,
     Step5Component,
     Step6Component,
+  
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({reducer : reducer}),
     HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+
   ],
   bootstrap: [AppComponent]
 })

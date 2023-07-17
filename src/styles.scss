@@ -2,5 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 body { margin : 0;background-color: #15202b}
