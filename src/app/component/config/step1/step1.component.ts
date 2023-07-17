@@ -3,7 +3,8 @@ import { Store } from '@ngrx/store';
 import { State } from '../../../reducer';
 import { Step1 } from 'src/app/actions/config.action';
 import { Router } from '@angular/router';
-
+import DATA from '../../../../app/data';
+import ICar from 'src/app/model/car.model';
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
@@ -11,9 +12,18 @@ import { Router } from '@angular/router';
 })
 export class Step1Component {
   constructor(private store: Store<State>, private router: Router) {}
-
-  selectCar(carId: number) {
-    this.store.dispatch(Step1({ carId }));
+  
+  cars: any;
+  selectCar(car: ICar) {
+    console.log('ici', car);
+    this.store.dispatch(Step1({ car }));
     this.router.navigate(['step2']);
   }
+  
+  ngOnInit() {
+    const cars = DATA.cars;
+    console.log('DataCars', cars);
+    this.cars = cars
+  }
+
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import DATA from '../app/data';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +12,16 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Tp-Alpine';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
+
+  
+
+  
+
 
   ngOnInit() {
-    this.router.navigate(['']);
+
   }
 }
+
+

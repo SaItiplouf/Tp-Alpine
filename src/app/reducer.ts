@@ -1,44 +1,42 @@
 import { createReducer, on } from '@ngrx/store';
 import {Step1, Step2, Step3, Step4} from './actions/config.action';
+import ICar from './model/car.model';
 
 export interface State {
-  selectedCarId: number;
-  Color: string;
-  Wheels: string;
-  Seat: string;
+  selectedCar : ICar | undefined
 }
 
 export const initialState: State = {
-  selectedCarId: 0,
-  Color: "",
-  Wheels: "",
-  Seat: "",
+  selectedCar : undefined,
 };
 
 export const reducer = createReducer(
   initialState,
-  on(Step1, (state, { carId }) => {
-    return {
+  on(Step1, (state, { car }) => {
+    let newState =  {
       ...state,
-      selectedCarId: carId,
+      selectedCar: car,
     };
+    console.log('Select Car', newState);
+    
+    return newState;
   }),
-  on(Step2, (state, { Color }) => {
-    return {
-      ...state,
-      Color: Color,
-    };
-  }),
-  on(Step3, (state, { Wheels }) => {
-    return {
-      ...state,
-      Wheels: Wheels,
-    };
-  }),
-  on(Step4, (state, { Seat }) => {
-    return {
-      ...state,
-      Seat: Seat,
-    };
-  })
+  // on(Step2, (state, { Color }) => {
+  //   return {
+  //     ...state,
+  //     Color: Color,
+  //   };
+  // }),
+  // on(Step3, (state, { Wheels }) => {
+  //   return {
+  //     ...state,
+  //     Wheels: Wheels,
+  //   };
+  // }),
+  // on(Step4, (state, { Seat }) => {
+  //   return {
+  //     ...state,
+  //     Seat: Seat,
+  //   };
+  // })
 );
