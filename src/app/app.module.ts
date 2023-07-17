@@ -14,6 +14,9 @@ import { ConfiguratorComponent } from '../app/component/config/configurator/conf
 import { Step1Component } from './component/config/step1/step1.component';
 import { Step2Component } from './component/config/step2/step2.component';
 import { Step3Component } from './component/config/step3/step3.component';
+import { Step4Component } from './component/config/step4/step4.component';
+import { Step5Component } from './component/config/step5/step5.component';
+import { Step6Component } from './component/config/step6/step6.component';
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
