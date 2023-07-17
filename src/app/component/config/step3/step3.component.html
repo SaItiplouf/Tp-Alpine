@@ -2,29 +2,12 @@
   <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
     <label class="text-3xl text-center font-thin mb-4">Choisissez vos jantes</label>
     <div class="flex justify-center">
-      <div class="w-1/2 pr-2 flex flex-col items-center">
-        <input type="radio" id="modele1" name="modele" class="hidden">
-        <label for="modele1" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg">
-          <img src="../../../../assets/images/configurateur/jantes/selection/jante-legende.jpg" alt="Voiture 1"
-            class="w-full max-h-96 object-contain">
+      <div *ngFor="let wheel of wheels" class="w-1/2 pr-2 flex flex-col items-center">
+        <input type="radio" [id]="wheel.id" name="wheel" class="hidden">
+        <label [for]="wheel.id" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg">
+          <img [src]="wheel.picture" [alt]="'Jante ' + wheel.name" class="w-full max-h-96 object-contain">
         </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectWheels('Chelou')">Sélectionner</button>
-      </div>
-      <div class="w-1/2 pl-2 flex flex-col items-center">
-        <input type="radio" id="modele2" name="modele" class="hidden">
-        <label for="modele2" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg">
-          <img src="../../../../assets/images/configurateur/jantes/selection/jante-serac.jpg" alt="Voiture 2"
-            class="w-full max-h-96 object-contain">
-        </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2"(click)="selectWheels('Pas mal')">Sélectionner</button>
-      </div>
-      <div class="w-1/2 pl-2 flex flex-col items-center">
-        <input type="radio" id="modele2" name="modele" class="hidden">
-        <label for="modele2" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg">
-          <img src="../../../../assets/images/configurateur/jantes/selection/jante-standard.jpg" alt="Voiture 2"
-            class="w-full max-h-96 object-contain">
-        </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectWheels('Belles')">Sélectionner</button>
+        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectWheels(wheel.name)">Sélectionner</button>
       </div>
     </div>
   </div>

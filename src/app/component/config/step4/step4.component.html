@@ -2,37 +2,12 @@
   <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
     <label class="text-3xl text-center font-thin mb-4">Choisissez vos sièges</label>
     <div class="flex justify-center">
-      <div class="w-1/2 pr-2 flex flex-col items-center">
-        <input type="radio" id="modele1" name="modele" class="hidden">
-        <label for="modele1" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg border-gray-600">
-          <img src="../../../../assets/images/configurateur/interieurs/selection/cuir-brun.jpg" alt="Voiture 1"
-               class="w-full max-h-96 object-contain">
+      <div *ngFor="let seat of seats" class="w-1/2 pr-2 flex flex-col items-center">
+        <input type="radio" [id]="seat.id" name="seat" class="hidden">
+        <label [for]="seat.id" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg border-gray-600">
+          <img [src]="seat.picture" [alt]="'Siège ' + seat.name" class="w-full max-h-96 object-contain">
         </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectSeat('Beige')">Sélectionner</button>
-      </div>
-      <div class="w-1/2 pl-2 flex flex-col items-center">
-        <input type="radio" id="modele2" name="modele" class="hidden">
-        <label for="modele2" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg border-gray-600">
-          <img src="../../../../assets/images/configurateur/interieurs/selection/cuir-noir_dinamica.jpg" alt="Voiture 2"
-               class="w-full max-h-96 object-contain">
-        </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectSeat('Sport')">Sélectionner</button>
-      </div>
-      <div class="w-1/2 pl-2 flex flex-col items-center">
-        <input type="radio" id="modele3" name="modele" class="hidden">
-        <label for="modele3" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg border-gray-600">
-          <img src="../../../../assets/images/configurateur/interieurs/selection/cuir-noir_perfore.jpg" alt="Voiture 3"
-               class="w-full max-h-96 object-contain">
-        </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectSeat('Bizarre')">Sélectionner</button>
-      </div>
-      <div class="w-1/2 pl-2 flex flex-col items-center">
-        <input type="radio" id="modele4" name="modele" class="hidden">
-        <label for="modele4" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg border-gray-600">
-          <img src="../../../../assets/images/configurateur/interieurs/selection/cuir-noir.jpg" alt="Voiture 4"
-               class="w-full max-h-96 object-contain">
-        </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectSeat('Luxe')">Sélectionner</button>
+        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectSeat(seat.name)">Sélectionner</button>
       </div>
     </div>
   </div>
