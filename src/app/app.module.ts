@@ -29,6 +29,9 @@ import {HttpClientModule} from "@angular/common/http";
     Step1Component,
     Step2Component,
     Step3Component,
+    Step4Component,
+    Step5Component,
+    Step6Component,
     ],
   imports: [
     BrowserModule,
