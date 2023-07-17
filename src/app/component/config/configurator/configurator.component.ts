@@ -8,17 +8,17 @@ import { reducer, State as ReducerState } from '../../../reducer';
   templateUrl: './configurator.component.html',
   styleUrls: ['./configurator.component.scss'],
 })
-export class ConfiguratorComponent implements OnInit {
+export class ConfiguratorComponent  {
   selectedCarId!: number | null;
 
   constructor(private store: Store<ReducerState>) {}
 
-  ngOnInit() {
-    console.log(this.selectedCarId);
-    this.store
-      .pipe(select((state: ReducerState) => state.selectedCarId))
-      .subscribe((carId) => {
-        this.selectedCarId = carId;
-      });
-  }
+  // ngOnInit() {
+  //   console.log(this.selectedCarId);
+  //   this.store
+  //     .pipe(select((state: ReducerState) => state))
+  //     .subscribe((carId) => {
+  //       this.selectedCarId = carId;
+  //     });
+  // }
 }

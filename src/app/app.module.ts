@@ -17,6 +17,7 @@ import { Step4Component } from './component/config/step4/step4.component';
 import { Step5Component } from './component/config/step5/step5.component';
 import { Step6Component } from './component/config/step6/step6.component';
 import {HttpClientModule} from "@angular/common/http";
+import { reducer } from './reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({reducer : reducer}),
     HttpClientModule,
   ],
   bootstrap: [AppComponent]
