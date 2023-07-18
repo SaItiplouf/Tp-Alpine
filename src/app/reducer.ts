@@ -60,13 +60,16 @@ export const reducer = createReducer(
 
     return newState;
   }),
-  on(Step5, (state, { Equipment }) => {
+  on(Step5, (state, { equipment_category, Equipment }) => {
     if (!state.selectedCar) return state
     let newState = {
       ...state,
       selectedCar :  {
         ...state.selectedCar,
-        equipement : Equipment
+        equipements : {
+          ...state.selectedCar.equipements,
+          
+        }
     }
   };
     console.log('Sélectionner Équipement', newState);
@@ -79,7 +82,10 @@ export const reducer = createReducer(
       ...state,
       selectedCar :  {
         ...state.selectedCar,
-        Accessoire : Accessoire,
+        accessoires : {
+          ...state.selectedCar.accessoires,
+
+        } ,
     }
   };
     console.log('Sélectionner Accessoire', newState);
