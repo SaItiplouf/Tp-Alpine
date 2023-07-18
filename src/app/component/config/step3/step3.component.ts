@@ -14,11 +14,8 @@ import DATA from 'src/app/data';
 })
 export class Step3Component {
 
-  wheels: any[] = [];
+  wheels!: IRim[];
   constructor(private store: Store<State>, private router: Router) {}
-
-  wheel!: IRim[];
-
 
   ngOnInit(): void {
     this.wheels = DATA.jantes

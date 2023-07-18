@@ -22,24 +22,33 @@ export const reducer = createReducer(
     return newState;
   }),
   on(Step2, (state, { Color }) => {
+    if (!state.selectedCar) return state
     let newState = {
       ...state,
-      Color: Color,
+      selectedCar :  {
+        ...state.selectedCar,
+        couleurs : Color
+      }
     };
     console.log('Sélectionner Couleur', newState);
 
     return newState;
   }),
   on(Step3, (state, { Wheels }) => {
+    if (!state.selectedCar) return state
     let newState = {
       ...state,
-      Wheels: Wheels,
+      selectedCar :  {
+        ...state.selectedCar,
+        jantes : Wheels
+      }
     };
     console.log('Sélectionner Roues', newState);
 
     return newState;
   }),
   on(Step4, (state, { Seat }) => {
+    if (!state.selectedCar) return state
     let newState = {
       ...state,
       Seat: Seat,
@@ -49,6 +58,7 @@ export const reducer = createReducer(
     return newState;
   }),
   on(Step5, (state, { Equipment }) => {
+    if (!state.selectedCar) return state
     let newState = {
       ...state,
       Equipment: Equipment,
@@ -58,6 +68,7 @@ export const reducer = createReducer(
     return newState;
   }),
   on(Step6, (state, { Accessoire }) => {
+    if (!state.selectedCar) return state
     let newState = {
       ...state,
       Accessoire: Accessoire,
