@@ -14,6 +14,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class Step5Component {
   equipment: { [key: string]: IEquipment[] } = {};
   selectedEquipment: { [key: string]: boolean } = {};
+  selectedCategory!: string;
   constructor(private store: Store<State>, private router: Router) {}
 
   ngOnInit(): void {
@@ -49,12 +50,17 @@ export class Step5Component {
     },
   };
 
+  selectCategory(category: string){
+    console.log('ici');
+    this.selectedCategory = category
+  }
+
   toggleEquipmentSelection(equipment: IEquipment) {
     if (this.selectedEquipment[equipment.id]) {
       this.selectedEquipment[equipment.id] = false;
     } else {
       this.selectedEquipment[equipment.id] = true;
-      this.store.dispatch(Step5({ Equipment: equipment }));
+      // this.store.dispatch(Step5({ equipment_category , Equipment: equipment }));
     }
   }
 
