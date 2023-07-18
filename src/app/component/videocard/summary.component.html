@@ -1,17 +1,34 @@
-<section class="bg-gray-900 py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-    <div class="w-full md:w-1/2">
-      <div id="video-container" class="relative">
-        <video id="video" class="w-full" autoplay loop muted preload="auto">
-          <source src="../../../assets/video/Alpine-Milan-HomePage-1680x951-950-non-possible-v3-12072021.mp4" type="video/mp4">
-          Votre navigateur ne prend pas en charge la balise vidéo.
-        </video>
-      </div>
+<section class="bg-gray-900 py-12 relative min-h-screen z-50" style="top: 64px;">
+  <div class="absolute inset-0 z-0">
+    <video id="video" class="w-full h-full object-cover" autoplay loop muted preload="auto">
+      <source src="../../../assets/video/Alpine-Milan-HomePage-1680x951-950-non-possible-v3-12072021.mp4" type="video/mp4">
+      Votre navigateur ne prend pas en charge la balise vidéo.
+    </video>
+  </div>
+  <div class="absolute bottom-16 left-0 right-0 flex justify-center mb-8">
+    <button class="bg-transparent border-4 border-white text-white text-2xl font-bold py-4 px-8 rounded-full mr-4 hover:bg-white hover:text-gray-900 transition-all duration-300">
+      Commandes
+    </button>
+    <button class="bg-transparent border-4 border-white text-white text-2xl font-bold py-4 px-8 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300">
+      Contact
+    </button>
+  </div>
+</section>
 
-    </div>
-    <div class="w-full md:w-1/2 px-6">
-      <h2 class="text-3xl font-bold mb-4 text-white">Alpine : Le plaisir de conduire</h2>
-      <p class="text-gray-400">Découvrez la marque Alpine, une icône du sport automobile français. Depuis des décennies, Alpine crée des voitures légères, agiles et performantes, offrant une expérience de conduite inégalée. Avec leur design distinctif et leur héritage riche, les véhicules Alpine incarnent le plaisir de conduire.</p>
+<section class="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Contenu de la section -->
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/2 md:pr-12 pt-12">
+        <div id="video-container" class="relative">
+          <img src="https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2020/01/alpine-a110-1856975.jpg?tf=3840x" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 mt-8 md:mt-0">
+        <h2 class="text-3xl font-bold mb-4 text-white">Alpine : Le plaisir de conduire</h2>
+        <p class="text-gray-400">Découvrez la marque Alpine, une icône du sport automobile français. Depuis des décennies, Alpine crée des voitures légères, agiles et performantes, offrant une expérience de conduite inégalée. Avec leur design distinctif et leur héritage riche, les véhicules Alpine incarnent le plaisir de conduire.</p>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4" (click)="scrollToConfigurator()">Accéder à notre configurateur</button>
+      </div>
     </div>
   </div>
 </section>
