@@ -9,27 +9,31 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class ConfigNavComponent {
 customOptions: OwlOptions = {
         loop: true,
-        mouseDrag: false,
-        touchDrag: false,
-        pullDrag: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
         dots: false,
+        margin : 0,
         navSpeed: 700,
         navText: ['', ''],
         responsive: {
           0: {
             items: 1
           },
-          400: {
+          250: {
             items: 2
           },
-          740: {
+          500: {
             items: 3
           },
-          940: {
+          750: {
             items: 4
-          }
+          },
+          1000: {
+            items: 5
+          },
         },
-        nav: true
+        nav: false
       }
 
     }

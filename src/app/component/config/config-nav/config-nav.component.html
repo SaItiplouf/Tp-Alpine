@@ -1,5 +1,32 @@
 <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>Slide 1</ng-template>
-    <ng-template carouselSlide>Slide 2</ng-template>
-    <ng-template carouselSlide>Slide 3</ng-template>
+  <ng-template carouselSlide>
+    <div class="p-6 slide-item bg-white text-black text-2xl font-light rounded-md transition-all duration-300 hover:bg-gray-200">
+      <a [owlRouterLink]="['']">Car</a>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="p-6 slide-item bg-white text-black text-2xl font-light rounded-md transition-all duration-300 hover:bg-gray-200">
+      <a [owlRouterLink]="['step2']">Color</a>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="p-6 slide-item bg-white text-black text-2xl font-light rounded-md transition-all duration-300 hover:bg-gray-200">
+      <a [owlRouterLink]="['step3']">Wheel</a>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="p-6 slide-item bg-white text-black text-2xl font-light rounded-md transition-all duration-300 hover:bg-gray-200">
+      <a [owlRouterLink]="['step4']">Seat</a>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="p-6 slide-item bg-white text-black text-2xl font-light rounded-md transition-all duration-300 hover:bg-gray-200">
+      <a [owlRouterLink]="['step5']">Equipement</a>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="p-6 slide-item bg-white text-black text-2xl font-light rounded-md transition-all duration-300 hover:bg-gray-200">
+      <a [owlRouterLink]="['step6']">Accessories</a>
+    </div>
+  </ng-template>
 </owl-carousel-o>
