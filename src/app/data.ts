@@ -64,7 +64,7 @@ interface IData {
         ],
        confort: [
          {
-           id: 5, 
+           id: 5,
            name: "Retroviseur intérieur électrochrome",
            picture:"../assets/images/configurateur/equipements/categories/confort/retro-int-electrochrome.jpg",
            price: 0,
@@ -154,7 +154,7 @@ interface IData {
      ],
      equipements: {
        design: [
-  
+
        ],
        media_et_naviguation: [
          {
@@ -274,19 +274,19 @@ interface IData {
   ],
   jantes: [
     {
-      name: "standard",
+      name: "Standard",
       picture: "../assets/images/configurateur/jantes/selection/jante-standard.jpg",
       price: 0,
       option: "A110 Pure",
     },
     {
-      name: "serac",
+      name: "Serac",
       picture: "../assets/images/configurateur/jantes/selection/jante-serac.jpg",
       price: 1000,
       option: "A110 Pure",
     },
     {
-      name: "legend",
+      name: "Legend",
       picture: "../assets/images/configurateur/jantes/selection/jante-legende.jpg",
       price: 0,
       option: "A110 Legend",
@@ -368,7 +368,7 @@ interface IData {
           "../assets/images/configurateur/equipements/categories/confort/pack-rangement.jpg",
         price: 504,
       },
-    
+
     ],
     conduite: [
       {
@@ -398,7 +398,7 @@ interface IData {
         picture:
           "../assets/images/configurateur/equipements/categories/conduite/echappement-sport.jpg",
         price: 1500,
-      }  
+      }
     ],
     securite: [
       {
@@ -582,8 +582,8 @@ interface IData {
   pictures: [
     {
       name: "A110 Pure",
-      color: "blanc glacier",
-      jante: "standard",
+      color: "Blanc glacier",
+      jante: "Standard",
       picturesList: [
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_standard (1).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_standard (2).jpg",
@@ -591,11 +591,11 @@ interface IData {
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_standard (4).jpg",
       ]
     },
-  
+
     {
       name: "A110 Pure",
       color: "Teinte spéciale Bleu Alpine",
-      jante: "standard",
+      jante: "Standard",
       picturesList: [
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_standard (1).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_standard (2).jpg",
@@ -603,11 +603,11 @@ interface IData {
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_standard (4).jpg",
       ]
     },
-  
+
     {
       name: "A110 Pure",
       color: "Teinte métallisée Noir Profond",
-      jante: "standard",
+      jante: "Standard",
       picturesList: [
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_noire-jante_standard (1).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_noire-jante_standard (2).jpg",
@@ -617,8 +617,8 @@ interface IData {
     },
     {
       name: "A110 Pure",
-      color: "blanc glacier",
-      jante: "serac",
+      color: "Blanc glacier",
+      jante: "Serac",
       picturesList: [
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (1).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (2).jpg",
@@ -629,7 +629,7 @@ interface IData {
     {
       name: "A110 Pure",
       color: "Teinte spéciale Bleu Alpine",
-      jante: "serac",
+      jante: "Serac",
       picturesList: [
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (1).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (2).jpg",
@@ -640,7 +640,7 @@ interface IData {
     {
       name: "A110 Pure",
       color: "Teinte métallisée Noir Profond",
-      jante: "serac",
+      jante: "Serac",
       picturesList: [
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (1).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (2).jpg",
@@ -650,8 +650,8 @@ interface IData {
     },
     {
       name: "A110 Legend",
-      color: "blanc glacier",
-      jante: "legend",
+      color: "Blanc glacier",
+      jante: "Legend",
       picturesList: [
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_blanc-jante_legende-1.jpg",
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_blanc-jante_legende-2.jpg",
@@ -662,7 +662,7 @@ interface IData {
     {
       name: "A110 Legend",
       color: "Teinte spéciale Bleu Alpine",
-      jante: "legend",
+      jante: "Legend",
       picturesList: [
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-1.jpg",
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-2.jpg",
@@ -670,11 +670,11 @@ interface IData {
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-4.jpg",
       ]
     },
-  
+
     {
       name: "A110 Legend",
       color: "Teinte métallisée Noir Profond",
-      jante: "legend",
+      jante: "L egend",
       picturesList: [
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-1.jpg",
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-2.jpg",
