@@ -27,9 +27,14 @@ export class Step6Component {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
+    margin: 20,
+    nav: true,
     dots: false,
     navSpeed: 600,
-    navText: ['&#8249', '&#8250;'],
+    navText: [
+      '<i class="fa-solid fa-chevron-left fa-lg"></i>',
+      '<i class="fa-solid fa-chevron-right fa-lg"></i>'
+    ],
     responsive: {
       0: {
         items: 1,
@@ -44,7 +49,6 @@ export class Step6Component {
         items: 4,
       },
     },
-    nav: true,
   };
 
   selectAccessoire(accessoire: IAccessoire) {
