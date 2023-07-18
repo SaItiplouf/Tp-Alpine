@@ -13,42 +13,57 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
   on(Step1, (state, { car }) => {
-    let newState =  {
+    let newState = {
       ...state,
       selectedCar: car,
     };
-    console.log('Select Car', newState);
-    
+    console.log('Sélectionner Voiture', newState);
+
     return newState;
   }),
   on(Step2, (state, { Color }) => {
-    return {
+    let newState = {
       ...state,
       Color: Color,
     };
+    console.log('Sélectionner Couleur', newState);
+
+    return newState;
   }),
   on(Step3, (state, { Wheels }) => {
-    return {
+    let newState = {
       ...state,
       Wheels: Wheels,
     };
+    console.log('Sélectionner Roues', newState);
+
+    return newState;
   }),
   on(Step4, (state, { Seat }) => {
-    return {
+    let newState = {
       ...state,
       Seat: Seat,
     };
+    console.log('Sélectionner Siège', newState);
+
+    return newState;
   }),
   on(Step5, (state, { Equipment }) => {
-    return {
+    let newState = {
       ...state,
       Equipment: Equipment,
     };
+    console.log('Sélectionner Équipement', newState);
+
+    return newState;
   }),
   on(Step6, (state, { Accessoire }) => {
-    return {
+    let newState = {
       ...state,
       Accessoire: Accessoire,
     };
+    console.log('Sélectionner Accessoire', newState);
+
+    return newState;
   })
 );

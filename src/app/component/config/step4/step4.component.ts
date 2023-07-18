@@ -17,9 +17,6 @@ export class Step4Component {
   
   constructor(private store: Store<State>, private router: Router) {}
 
-
-  Seat!: ISellerie[];
-
   ngOnInit(): void {
     this.seats = DATA.sellerie;
   }

@@ -19,7 +19,8 @@ import { Step6Component } from './component/config/step6/step6.component';
 import {HttpClientModule} from "@angular/common/http";
 import { reducer } from './reducer';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfigNavComponent } from './component/config/config-nav/config-nav.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     Step4Component,
     Step5Component,
     Step6Component,
+    ConfigNavComponent,
   
     ],
   imports: [

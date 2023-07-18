@@ -11,10 +11,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-step5',
   templateUrl: './step5.component.html',
-  styleUrls: ['./step5.component.scss']
+  styleUrls: ['./step5.component.scss'],
 })
-export class Step5Component  {
-
+export class Step5Component {
   equipment: { [key: string]: IEquipment[] } = {};
 
   constructor(private store: Store<State>, private router: Router) {}
@@ -25,31 +24,30 @@ export class Step5Component  {
 
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    margin: 20,
+    nav: true,
     dots: false,
     navSpeed: 600,
     navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
-        items: 1 
+        items: 1,
       },
       400: {
-        items: 2
+        items: 2,
       },
       760: {
-        items: 3
+        items: 3,
       },
       1000: {
-        items: 4
-      }
+        items: 4,
+      },
     },
-    nav: true
-  }
-
+  };
   selectEquipment(equipment: IEquipment) {
     this.store.dispatch(Step5({ Equipment: equipment }));
-    this.router.navigate(['step6']);
   }
 }

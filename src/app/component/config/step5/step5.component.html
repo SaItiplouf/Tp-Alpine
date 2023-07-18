@@ -1,59 +1,16 @@
+<label class="text-3xl text-center font-thin mb-4">Choisissez vos équipements</label>
+  <owl-carousel-o [options]="customOptions">
 
+    <ng-container *ngFor="let equipementGroup of equipment | keyvalue">
+      <ng-template carouselSlide [id]="equipementGroup.key">
+        <img [src]="equipementGroup.value[0].picture" [alt]="equipementGroup.value[0].name" [title]="equipementGroup.value[0].name">
+        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2 " (click)="selectEquipment(equipementGroup.value[0])">Sélectionner</button>
+        <p>{{ equipementGroup.value[0].name }}</p>
+      </ng-template>
+    </ng-container>
 
-<div class="flex flex-wrap justify-center p-8 bg-gray-100">
-  <div class="w-full sm:w-5/6 md:w-5/6 lg:w-4/5 mb-4">
-    <label class="text-3xl text-center font-thin mb-4">Choisissez vos équipements</label>
-    <div class="home-demo">
-      <div class="owl-carousel owl-theme">
-        <div *ngFor="let equipementGroup of equipment | keyvalue" class="item">
-          <div class="w-1/2 pr-2 flex flex-col items-center">
-            <input type="radio" [id]="equipementGroup.key" name="modele" class="hidden">
-            <label [for]="equipementGroup.key" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg">
-              <img [src]="equipementGroup.value[0].picture" [alt]="equipementGroup.value[0].name" class="w-full max-h-96 object-contain">
-            </label>
-            <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2">Sélectionner</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </owl-carousel-o> 
 
-
-
-<h2 class="mb-5">Angular Dynamic Owl Carousel Example</h2>
-<owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="https://via.placeholder.com/600/92c952" alt="img 1" />
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="https://via.placeholder.com/600/771796" alt="img 2" />
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="https://via.placeholder.com/600/24f355" alt="img 3" />
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="https://via.placeholder.com/600/d32776" alt="img 4" />
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="https://via.placeholder.com/600/f66b97" alt="img 5" />
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="https://via.placeholder.com/600/56a8c2" alt="img 6" />
-    </div>
-  </ng-template>
-</owl-carousel-o>
 
 
 

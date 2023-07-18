@@ -5,6 +5,7 @@
       <div *ngFor="let color of colors" class="w-1/2 pl-2 flex flex-col items-center">
         <img [src]="color.picture" [alt]="'Couleur ' + color.name" class="w-full max-h-96 object-contain">
         <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectColor(color)">Sélectionner</button>
+        <p>{{color.name}}</p>
       </div>
     </div>
   </div>

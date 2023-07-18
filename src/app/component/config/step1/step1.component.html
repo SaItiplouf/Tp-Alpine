@@ -4,7 +4,7 @@
     <div class="flex justify-center">
       <div *ngFor="let car of cars" class="w-1/2 pl-2 flex flex-col items-center">
         <img [src]="car.version.picture" [alt]="'Voiture ' + car.version.id" class="w-full max-h-96 object-contain">
-        <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectCar(car)">Sélectionner</button>
+        <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectCar(car)">Sélectionner</button> <p>{{car.version.name}}</p>
       </div>
     </div>
   </div>
