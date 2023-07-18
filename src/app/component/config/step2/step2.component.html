@@ -1,4 +1,4 @@
-<div class="rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 dark:text-white">
+<div class="rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 text-white">
   <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
     <h1 class="text-3xl text-center font-thin mb-4">Sélectionnez une couleur</h1>
     <div class="flex justify-center">
@@ -6,6 +6,7 @@
         <img [src]="color.picture" [alt]="'Couleur ' + color.name" class="w-full max-h-96 object-contain">
         <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectColor(color)">Sélectionner</button>
         <p>{{color.name}}</p>
+        <p>{{color.price}} €</p>
       </div>
     </div>
   </div>

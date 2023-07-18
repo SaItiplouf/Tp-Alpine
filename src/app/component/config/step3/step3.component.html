@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center p-8 bg-gray-100">
+<div class="flex flex-wrap justify-center p-8 bg-gray-900 text-white">
   <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
     <label class="text-3xl text-center font-thin mb-4">Choisissez vos jantes</label>
     <div class="flex justify-center">
@@ -9,6 +9,7 @@
         </label>
         <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectWheels(wheel.name)">Sélectionner</button>
         <p>{{wheel.name}}</p>
+        <p>{{wheel.price}} €</p>
       </div>
     </div>
   </div>

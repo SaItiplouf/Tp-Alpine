@@ -1,10 +1,12 @@
-<div class="rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 dark:text-white">
+<div class="rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 text-white">
   <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
     <h1 class="text-3xl text-center font-thin mb-4">Sélectionnez un modèle de voiture</h1>
     <div class="flex justify-center">
       <div *ngFor="let car of cars" class="w-1/2 pl-2 flex flex-col items-center">
         <img [src]="car.version.picture" [alt]="'Voiture ' + car.version.id" class="w-full max-h-96 object-contain">
-        <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectCar(car)">Sélectionner</button> <p>{{car.version.name}}</p>
+        <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectCar(car)">Sélectionner</button>
+         <p>{{car.version.name}}</p>
+         <p>{{car.version.price}} €</p>
       </div>
     </div>
   </div>
