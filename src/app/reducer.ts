@@ -51,7 +51,10 @@ export const reducer = createReducer(
     if (!state.selectedCar) return state
     let newState = {
       ...state,
-      Seat: Seat,
+      selectedCar :  {
+        ...state.selectedCar,
+        scellerie : Seat
+      }
     };
     console.log('Sélectionner Siège', newState);
 
@@ -61,8 +64,11 @@ export const reducer = createReducer(
     if (!state.selectedCar) return state
     let newState = {
       ...state,
-      Equipment: Equipment,
-    };
+      selectedCar :  {
+        ...state.selectedCar,
+        equipement : Equipment
+    }
+  };
     console.log('Sélectionner Équipement', newState);
 
     return newState;
@@ -71,8 +77,11 @@ export const reducer = createReducer(
     if (!state.selectedCar) return state
     let newState = {
       ...state,
-      Accessoire: Accessoire,
-    };
+      selectedCar :  {
+        ...state.selectedCar,
+        Accessoire : Accessoire,
+    }
+  };
     console.log('Sélectionner Accessoire', newState);
 
     return newState;
