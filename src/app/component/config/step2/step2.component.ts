@@ -21,7 +21,7 @@ export class Step2Component implements OnInit {
   };
 
   selectColor(Color: IColor) {
-    this.store.dispatch(Step2({ Color }));
+    this.store.dispatch(Step2({ Color })); 
     this.router.navigate(['step3']);
   }
 }
