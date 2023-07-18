@@ -4,6 +4,15 @@
     Prix total : {{ totalPrice }}
   </div>
   <router-outlet>
-    <app-config-nav></app-config-nav>
   </router-outlet>
+
+  <ng-container *ngIf="selectedCar">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide>
+        <img [src]="selectedCar.version.picture">
+      </ng-template>
+    </owl-carousel-o>
+  </ng-container>
+
+  <app-config-nav></app-config-nav>
 </section>

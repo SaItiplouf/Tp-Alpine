@@ -1,13 +1,11 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State } from '../../../reducer';
 import { Router } from '@angular/router';
 import { Step5 } from '../../../actions/config.action';
 import IEquipment from 'src/app/model/equipment.model';
 import DATA from 'src/app/data';
-
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
 @Component({
   selector: 'app-step5',
   templateUrl: './step5.component.html',
@@ -15,7 +13,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class Step5Component {
   equipment: { [key: string]: IEquipment[] } = {};
-
+  selectedEquipment: { [key: string]: boolean } = {};
   constructor(private store: Store<State>, private router: Router) {}
 
   ngOnInit(): void {
@@ -31,7 +29,10 @@ export class Step5Component {
     nav: true,
     dots: false,
     navSpeed: 600,
-    navText: ['&#8249', '&#8250;'],
+    navText: [
+      '<i class="fa-solid fa-chevron-left fa-lg"></i>',
+      '<i class="fa-solid fa-chevron-right fa-lg"></i>'
+    ],
     responsive: {
       0: {
         items: 1,
@@ -47,7 +48,14 @@ export class Step5Component {
       },
     },
   };
-  selectEquipment(equipment: IEquipment) {
-    this.store.dispatch(Step5({ Equipment: equipment }));
+
+  toggleEquipmentSelection(equipment: IEquipment) {
+    if (this.selectedEquipment[equipment.id]) {
+      this.selectedEquipment[equipment.id] = false;
+    } else {
+      this.selectedEquipment[equipment.id] = true;
+      this.store.dispatch(Step5({ Equipment: equipment }));
+    }
   }
+
 }

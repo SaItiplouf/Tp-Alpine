@@ -6,3 +6,28 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 body { margin : 0;background-color: #15202b}
+.owl-item {
+  margin: 10px!important;
+  color: #FFF!important;
+  -webkit-border-radius: 3px!important;
+  -moz-border-radius: 3px!important;
+  border-radius: 3px!important;
+  text-align: center!important;
+}
+.owl-theme {
+  margin-top: 0px !important;
+}
+.owl-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  position : absolute;
+  top: -0;
+  right : 0;
+}
+
+.owl-prev,
+.owl-next {
+  padding: 15px !important;
+}

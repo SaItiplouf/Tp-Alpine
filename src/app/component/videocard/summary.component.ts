@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {ConfiguratorComponent} from "../config/configurator/configurator.component";
 
 @Component({
   selector: 'app-videocard',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class SummaryComponent {
 
+  scrollToConfigurator() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
 }

@@ -1,18 +1,18 @@
 <label class="text-3xl text-center font-thin mb-4 dark:bg-gray-900 text-white">Choisissez vos équipements</label>
   <owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let equipementGroup of equipment | keyvalue">
+    <ng-template carouselSlide [id]="equipementGroup.key">
+      <img [src]="equipementGroup.value[0].picture" [alt]="equipementGroup.value[0].name" [title]="equipementGroup.value[0].name"
+           [ngClass]="{'border-4 border-blue-600': selectedEquipment[equipementGroup.value[0].id], 'disabled': selectedEquipment[equipementGroup.value[0].id]}">
+      <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2"
+              [ngClass]="{'border-4 border-blue-600': selectedEquipment[equipementGroup.value[0].id]}"
+              (click)="toggleEquipmentSelection(equipementGroup.value[0])">Sélectionner</button>
+       <p>{{ equipementGroup.value[0].name }}</p>
+       <p>{{ equipementGroup.value[0].price }} €</p>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
 
-    <ng-container *ngFor="let equipementGroup of equipment | keyvalue">
-      <ng-template carouselSlide [id]="equipementGroup.key">
-        <img [src]="equipementGroup.value[0].picture" [alt]="equipementGroup.value[0].name" [title]="equipementGroup.value[0].name">
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2 " (click)="selectEquipment(equipementGroup.value[0])">Sélectionner</button>
-        <div class="text-white">
-          <p>{{ equipementGroup.value[0].name }}</p>
-          <p>{{ equipementGroup.value[0].price }} €</p>
-        </div>
-      </ng-template>
-    </ng-container>
-
-  </owl-carousel-o> 
 
 
 

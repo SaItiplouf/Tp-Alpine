@@ -14,13 +14,12 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  
 
-  
+
+
 
 
   ngOnInit() {
-      this.router.navigate(['']);
   }
 }
 

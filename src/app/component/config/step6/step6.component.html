@@ -1,6 +1,5 @@
-<label class="text-3xl text-center font-thin mb-4">Choisissez vos Accessoires</label>
+<label class="text-3xl text-center font-thin mb-4 text-white">Choisissez vos Accessoires</label>
   <owl-carousel-o [options]="customOptions">
-
     <ng-container *ngFor="let accessoireGroup of Accessoire | keyvalue">
       <ng-template carouselSlide [id]="accessoireGroup.key">
         <img [src]="accessoireGroup.value[0].picture" [alt]="accessoireGroup.value[0].name" [title]="accessoireGroup.value[0].name">

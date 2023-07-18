@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from "@ngrx/store";
+import {select, Store} from "@ngrx/store";
 import {State} from "../../../reducer";
 import {Router} from "@angular/router";
 import {Step2} from "../../../actions/config.action";
@@ -18,6 +18,9 @@ export class Step2Component implements OnInit {
 
   ngOnInit(): void {
     this.colors = DATA.couleurs
+    this.store.pipe(select((state: State) => state.selectedCar)).subscribe(selectedCar => {
+      console.log('Selected Car:', selectedCar);
+    });
   };
 
   selectColor(Color: IColor) {
