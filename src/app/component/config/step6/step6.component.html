@@ -1,15 +1,72 @@
-<label class="text-3xl text-center font-thin mb-4 text-white">Choisissez vos Accessoires</label>
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let accessoireGroup of Accessoire | keyvalue">
-      <ng-template carouselSlide [id]="accessoireGroup.key">
-        <img [src]="accessoireGroup.value[0].picture" [alt]="accessoireGroup.value[0].name" [title]="accessoireGroup.value[0].name">
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectAccessoire(accessoireGroup.value[0])">Sélectionner</button>
-        <div class="text-white"></div>
-        <div class="text-white">
-          <p>{{ accessoireGroup.value[0].name }}</p>
-          <p>{{ accessoireGroup.value[0].price }} €</p>
+<nav class="bg-gray-900 rounded-lg flex flex-wrap m-4 justify-center text-white h-[100px]">
+  <div class="container mx-auto px-4 py-2">
+    <label class="text-3xl text-center font-thin mb-4">{{ selectedCategory ? selectedCategory : 'Choisissez vos équipements' }}</label>
+    <ul class="flex flex-row space-x-4">
+      <li *ngFor="let accessoireCategory of Accessoire | keyvalue" class="flex justify-center">
+        <button
+          class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          (click)="selectCategory(accessoireCategory.key)"
+        >
+          {{ accessoireCategory.key }}
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="text-2xl rounded-lg flex flex-wrap justify-center dark:bg-gray-900 text-white h-[400px]">
+  <div class="w-5/6 overflow-hidden">
+    <ng-container *ngIf="selectedCategory">
+      <ng-container *ngIf="Accessoire[selectedCategory].length > 3; else individualAccessoires">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let Accessoire of Accessoire[selectedCategory]" class="p-2">
+            <ng-template carouselSlide [id]="Accessoire.name">
+              <div class="flex flex-col items-center bg-gray-800 rounded transition-all duration-300 hover:bg-gray-700 p-5">
+                <img [src]="Accessoire.picture" [alt]="Accessoire.name" [title]="Accessoire.name" class="max-h-[200px] object-scale-down p-2">
+                <button class="bg-gray-900 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded mt-2 transition-all duration-300" (click)="selectAccessoire(Accessoire)">Sélectionner</button>
+                <div class="flex flex-col items-center mt-2">
+                  <p class="text-white font-semibold">{{ Accessoire.name }}</p>
+                  <p class="text-yellow-300">{{ Accessoire.price }} €</p>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </ng-container>
+      <ng-template #individualAccessoires>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          <ng-container *ngFor="let Accessoire of Accessoire[selectedCategory]" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-4 p-2">
+            <div class="w-full text-white">
+
+              <div class="flex flex-col items-center p-4 rounded" [ngClass]="{'border-blue-600 border-4': selectedAccessoire[Accessoire.name]}">
+              <img [src]="Accessoire.picture" [alt]="Accessoire.name" [title]="Accessoire.name">
+              <div class="flex flex-col mt-2">
+              <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="toggleAccessoireSelection(Accessoire)">Sélectionner</button>
+                <p class="text-white font-semibold">{{ Accessoire.name }}</p>
+                <p class="text-white font-light">{{ Accessoire.price }} €</p>
+              </div>
+            </div>
+            </div>
+
+          </ng-container>
         </div>
       </ng-template>
     </ng-container>
+  </div>
+</div>
 
-  </owl-carousel-o>
+
+<!--      <div class="w-full text-white">-->
+
+<!--        <img [src]="Accessoire.picture" [alt]="Accessoire.name" [title]="Accessoire.name"-->
+<!--             [ngClass]="{'border-4 border-blue-600': selectedAccessoire[Accessoire.name], 'disabled': selectedAccessoire[Accessoire.name]}">-->
+<!--        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2"-->
+<!--                [ngClass]="{'border-4 border-blue-600': selectedAccessoire[Accessoire.name]}"-->
+<!--                (click)="toggleEquipmentSelection(Accessoire)">Sélectionner</button>-->
+<!--        <p>{{ Accessoire.name }}</p>-->
+<!--        <p>{{ Accessoire.price }} €</p>-->
+<!--      </div>-->
+
+
+
