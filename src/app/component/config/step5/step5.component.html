@@ -1,32 +1,31 @@
-<label class="text-3xl text-center font-thin mb-4 dark:bg-gray-900 text-white">Choisissez vos équipements</label>
-    <ul>
-      <li  *ngFor="let equipmentCategory of equipment |keyvalue">
-        <button (click)="selectCategory(equipmentCategory.key)">
-          {{equipmentCategory.key}}
-        </button>
-      </li>
-    </ul>
-    <div *ngIf="selectedCategory">
-      <div *ngFor="let equipment of equipment[selectedCategory]">
-        {{equipment.name}}
-      </div>  
-    </div>
-
-  <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let equipementGroup of equipment | keyvalue">
-    <ng-template carouselSlide [id]="equipementGroup.key">
-      <img [src]="equipementGroup.value[0].picture" [alt]="equipementGroup.value[0].name" [title]="equipementGroup.value[0].name"
-           [ngClass]="{'border-4 border-blue-600': selectedEquipment[equipementGroup.value[0].id], 'disabled': selectedEquipment[equipementGroup.value[0].id]}">
-      <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2"
-              [ngClass]="{'border-4 border-blue-600': selectedEquipment[equipementGroup.value[0].id]}"
-              (click)="toggleEquipmentSelection(equipementGroup.value[0])">Sélectionner</button>
-       <p>{{ equipementGroup.value[0].name }}</p>
-       <p>{{ equipementGroup.value[0].price }} €</p>
-    </ng-template>
-  </ng-container>
-</owl-carousel-o>
-
-
-
-
-
+<nav class="bg-gray-900 rounded-lg flex flex-wrap m-4 justify-center text-white h-[500px]">
+  <div class="container mx-auto px-4 py-2">
+    <label class="text-3xl text-center font-thin mb-4">{{ selectedCategory ? selectedCategory : 'Choisissez vos équipements' }}</label>
+    <mat-tab-group (selectedTabChange)="selectCategory($event.tab.textLabel)">
+      <ng-container *ngFor="let equipmentCategory of equipment | keyvalue">
+        <mat-tab label="{{ equipmentCategory.key }}">
+          <ng-template mat-tab-label>
+            <div class="tab-label" [ngClass]="{'active-tab-label': selectedCategory === equipmentCategory.key}">
+              {{ equipmentCategory.key }}
+            </div>
+          </ng-template>
+          <div *ngIf="selectedCategory === equipmentCategory.key" class="flex flex-wrap">
+            <div *ngFor="let equipment of equipment[equipmentCategory.key]" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-4 p-2">
+              <div class="w-full text-white">
+                <div class="flex flex-col items-center p-4 rounded" [ngClass]="{'border-blue-600 border-4': selectedEquipment[equipment.name]}">
+                  <img [src]="equipment.picture" [alt]="equipment.name" [title]="equipment.name">
+                  <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2"
+                          (click)="toggleEquipmentSelection(equipment)">Sélectionner</button>
+                  <div class="flex flex-col items-center mt-2 ">
+                    <p class="text-white font-semibold truncate text-base">{{ equipment.name }}</p>
+                    <p class="text-yellow-300">{{ equipment.price }} €</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
+  </div>
+</nav>

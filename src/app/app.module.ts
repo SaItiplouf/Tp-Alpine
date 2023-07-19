@@ -21,6 +21,13 @@ import { reducer } from './reducer';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfigNavComponent } from './component/config/config-nav/config-nav.component'
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatToolbar} from "@angular/material/toolbar";
+import {LayoutModule} from "@angular/cdk/layout";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -37,7 +44,7 @@ import { ConfigNavComponent } from './component/config/config-nav/config-nav.com
     Step5Component,
     Step6Component,
     ConfigNavComponent,
-  
+
     ],
   imports: [
     BrowserModule,
@@ -47,7 +54,12 @@ import { ConfigNavComponent } from './component/config/config-nav/config-nav.com
     BrowserModule,
     BrowserAnimationsModule,
     CarouselModule,
-
+    MatTabsModule,
+    LayoutModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule
   ],
   bootstrap: [AppComponent]
 })

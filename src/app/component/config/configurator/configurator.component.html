@@ -1,16 +1,17 @@
 <section class="p-8">
   <h2 class="text-sm font-bold mb-4 text-left text-white">Comparateur de Voiture</h2>
-  
-  <router-outlet>
-  </router-outlet>
+  <div class="flex flex-col"> <!-- Utilisez la classe "flex" pour que les composants à l'intérieur aient la même hauteur -->
+    <router-outlet></router-outlet>
 
-  <ng-container *ngIf="selectedCar">
-    <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide>
-        <img [src]="selectedCar.version.picture">
-      </ng-template>
-    </owl-carousel-o>
-  </ng-container>
+    <ng-container *ngIf="selectedCar">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <img [src]="selectedCar.version.picture">
+        </ng-template>
+      </owl-carousel-o>
+    </ng-container>
 
+    <div class="flex-grow"></div> <!-- Utilisez la classe "flex-grow" pour que cette div prenne toute la hauteur disponible -->
+  </div>
   <app-config-nav></app-config-nav>
 </section>
