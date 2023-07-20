@@ -1,7 +1,7 @@
 
 <nav class="bg-gray-900 rounded-lg flex flex-wrap m-4 justify-center text-white h-[500px]">
   <div class="container mx-auto px-4 py-2">
-  
+
     <label class="text-3xl text-center font-thin mb-4">{{ selectedCategory ? selectedCategory : 'Choisissez vos équipements' }}</label>
     <mat-tab-group (selectedTabChange)="selectCategory($event.tab.textLabel)">
       <ng-container *ngFor="let accessoireCategory of Accessoire | keyvalue">
@@ -18,12 +18,11 @@
         <ng-container *ngFor="let accessoire of Accessoire[accessoireCategory.key]">
           <ng-template carouselSlide [id]="accessoire.name">
             <div class="owl-carousel-item col-md-4 col-lg-3">
-              <div
-                class="flex flex-col items-center bg-gray-800 rounded transition-all duration-300 hover:bg-gray-700 p-5">
+              <div class="flex flex-col items-center p-4 rounded" [ngClass]="{'border-blue-600 border-4': selectedAccessoire[accessoire.name]}">
                 <img [src]="accessoire.picture" [alt]="accessoire.name" [title]="accessoire.name"
                   class="max-h-[200px] object-scale-down p-2">
-                <button class="bg-gray-900 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded mt-2"
-                  (click)="selectAccessoire(accessoire)">Sélectionner</button>
+                <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2"
+                        (click)="toggleAccessoireSelection(accessoire)">Sélectionner</button>
                 <div class="flex flex-col items-center mt-2">
                   <p class="text-white font-semibold">{{ accessoire.name }}</p>
                   <p class="text-yellow-300">{{ accessoire.price }} €</p>
