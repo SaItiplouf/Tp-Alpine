@@ -5,6 +5,7 @@ import { reducer, State as ReducerState } from '../../../reducer';
 import ICar from "../../../model/car.model";
 import { Router } from '@angular/router';
 import {OwlOptions} from "ngx-owl-carousel-o";
+import DATA from "../../../data";
 
 @Component({
   selector: 'app-configurator',
@@ -13,18 +14,24 @@ import {OwlOptions} from "ngx-owl-carousel-o";
 })
 export class ConfiguratorComponent implements OnInit {
   selectedCar: ICar | undefined;
-
-  constructor(private store: Store<ReducerState>, private router: Router) {
+  picture?:{name : string, color : string, jante : string, picturesList : Array<string>};
+  constructor(private store: Store<{reducer: State}>, private router: Router) {
     this.selectedCar = undefined;
   }
 
   ngOnInit() {
-    this.store.pipe(select((state: State) => state.selectedCar)).subscribe(car => {
+    this.store.select((state) => state.reducer.selectedCar).subscribe(car => {
       this.selectedCar = car;
       console.log(this.selectedCar);
+      this.picture = DATA.pictures.filter((picture)=>{
+        if (car?.version.name == picture.name && car?.couleurs.name === picture.color && car?.jantes.name === picture.jante){
+          return picture
+        }
+      })[0]
+      console.log(this.picture)
     });
 
-   
+
   }
 
 
@@ -59,7 +66,7 @@ export class ConfiguratorComponent implements OnInit {
 
 
 
-  
-  
-  
+
+
+
 }

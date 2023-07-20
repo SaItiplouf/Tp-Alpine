@@ -1,8 +1,9 @@
 <div class="text-2xl rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 text-white h-[500px]">
   <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
     <h1 class="text-3xl text-center font-thin mb-4">Sélectionnez une couleur</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <div *ngFor="let color of colors" class="flex flex-col items-center bg-gray-800 rounded transition-all duration-300 hover:bg-gray-700 p-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4" *ngIf="car !== undefined" >
+      <ng-container *ngFor="let color of colors" >
+      <div *ngIf="car.version.name === color.option || color.option === undefined" class="flex flex-col items-center bg-gray-800 rounded transition-all duration-300 hover:bg-gray-700 p-2">
         <img [src]="color.picture" [alt]="'Couleur ' + color.name" class="w-full h-56 object-contain">
         <div class="flex flex-col items-center p-4">
           <p class="font-semibold text-center h-16">{{color.name}}</p>
@@ -10,6 +11,7 @@
           <button class="bg-gray-900 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded mt-2 transition-all duration-300" (click)="selectColor(color)">Sélectionner</button>
         </div>
       </div>
+      </ng-container>
     </div>
   </div>
 </div>
