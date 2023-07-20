@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import {Step1, Step2, Step3, Step4, Step5, Step6} from './actions/config.action';
+import {RemoveEquipment, Step1, Step2, Step3, Step4, Step5, Step6} from './actions/config.action';
 import ICar from './model/car.model';
 
 export interface State {
@@ -61,18 +61,44 @@ export const reducer = createReducer(
     return newState;
   }),
   on(Step5, (state, { equipment_category, Equipment }) => {
-    if (!state.selectedCar) return state
+    if (!state.selectedCar) return state;
+
+    let category = equipment_category;
+
     let newState = {
       ...state,
-      selectedCar :  {
+      selectedCar: {
         ...state.selectedCar,
-        equipements : {
+        equipements: {
           ...state.selectedCar.equipements,
-          
-        }
-    }
-  };
+          [category]: [...state.selectedCar.equipements[category], Equipment],
+        },
+      },
+    };
+
     console.log('Sélectionner Équipement', newState);
+
+    return newState;
+  }),
+  on(RemoveEquipment, (state, { equipment_category, Equipment }) => {
+    if (!state.selectedCar) return state;
+
+    let category = equipment_category;
+
+    let updatedCategory = state.selectedCar.equipements[category].filter(item => item !== Equipment);
+
+    let newState = {
+      ...state,
+      selectedCar: {
+        ...state.selectedCar,
+        equipements: {
+          ...state.selectedCar.equipements,
+          [category]: updatedCategory,
+        },
+      },
+    };
+
+    console.log('Supprimer Équipement', newState);
 
     return newState;
   }),
