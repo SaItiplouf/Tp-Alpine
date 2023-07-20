@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State } from '../../../reducer';
 import { Router } from '@angular/router';
-import { Step6 } from '../../../actions/config.action';
+import {RemoveAccessoire, Step6} from '../../../actions/config.action';
 import IAccessoire from 'src/app/model/accessoire.model';
 import DATA from 'src/app/data';
 
@@ -61,18 +61,23 @@ export class Step6Component implements OnInit {
   selectCategory(category: string){
     this.selectedCategory = category
   }
-  selectAccessoire(accessoire: IAccessoire) {
-    this.store.dispatch(Step6({ Accessoire: accessoire }));
-    this.router.navigate(['step7']);
-  }
+  // selectAccessoire(accessoire: IAccessoire) {
+  //   this.store.dispatch(Step6({ Accessoire: accessoire }));
+  // }
   toggleAccessoireSelection(accessoire: IAccessoire) {
     if (this.selectedAccessoire[accessoire.name]) {
+      if (this.selectedCategory !== null) {
       this.selectedAccessoire[accessoire.name] = false;
-      // remove accessoire from selectedcar
-    } else {
-      this.selectedAccessoire[accessoire.name] = true;
-      // add accessoire from selectedcar
-      // this.store.dispatch(Step6({ equipment_category , Accessoire : accessoire }));
+      this.store.dispatch(RemoveAccessoire({ accessoire_category: this.selectedCategory , Accessoire : accessoire }));
+      console.log('Removed', accessoire.name)
+    }
+    }
+    else {
+      if (this.selectedCategory !== null) {
+        this.selectedAccessoire[accessoire.name] = true;
+      this.store.dispatch(Step6({ accessoire_category: this.selectedCategory , Accessoire : accessoire }));
+      console.log('Added', accessoire.name)
+    }
     }
   }
 }
