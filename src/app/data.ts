@@ -30,12 +30,12 @@ interface IData {
        picture: "../assets/images/configurateur/modele/selection/pure.png",
       },
      couleurs: {
-       name: "blanc glacier",
+       name: "Blanc glacier",
        price: 0,
        picture: "../assets/images/configurateur/couleurs/selection/blanc.jpg",
      },
      jantes: {
-       name: "standard",
+       name: "Standard",
        picture: "../assets/images/configurateur/jantes/selection/jante-standard.jpg",
        price: 0,
        option :'A110 Pure',
@@ -229,7 +229,7 @@ interface IData {
   //choix des améliorations voitures
   couleurs: [
     {
-      name: "blanc glacier",
+      name: "Blanc glacier",
       price: 0,
       picture: "../assets/images/configurateur/couleurs/selection/blanc.jpg",
     },
@@ -242,6 +242,12 @@ interface IData {
       name: "Teinte spéciale Bleu Alpine",
       picture: "../assets/images/configurateur/couleurs/selection/bleu.jpg",
       price: 840,
+    },
+    {
+      name: "Teinte spéciale Gendarmerie",
+      picture: "../assets/images/configurateur/couleurs/selection/gendarmerie.png",
+      price: 840,
+      option : 'A110 Legend'
     },
   ],
   sellerie: [
@@ -670,11 +676,21 @@ interface IData {
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-4.jpg",
       ]
     },
-
+    {
+      name: "A110 Legend",
+      color: "Teinte spéciale Gendarmerie",
+      jante: "Legend",
+      picturesList: [
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-1.jpg",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-2.jpg",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-3.jpg",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-4.jpg",
+      ]
+    },
     {
       name: "A110 Legend",
       color: "Teinte métallisée Noir Profond",
-      jante: "L egend",
+      jante: "Legend",
       picturesList: [
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-1.jpg",
         "../assets/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-2.jpg",

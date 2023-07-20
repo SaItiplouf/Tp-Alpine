@@ -3,7 +3,7 @@
   <div class="container mx-auto px-4 py-2">
 
     <label class="text-3xl text-center font-thin mb-4">{{ selectedCategory ? selectedCategory : 'Choisissez vos équipements' }}</label>
-    <mat-tab-group (selectedTabChange)="selectCategory($event.tab.textLabel)">
+    <mat-tab-group [selectedIndex]="0" (selectedTabChange)="selectCategory($event.tab.textLabel)">
       <ng-container *ngFor="let accessoireCategory of Accessoire | keyvalue">
         <mat-tab label="{{ accessoireCategory.key }}">
           <ng-template mat-tab-label>
@@ -14,7 +14,7 @@
 
 <ng-container *ngIf="Accessoire[accessoireCategory.key].length > 3; else individualAccessoires">
     <div class="w-full">
-      <owl-carousel-o [options]="customOptions">
+      <owl-carousel-o *ngIf="activeTab === accessoireCategory.key" [options]="customOptions">
         <ng-container *ngFor="let accessoire of Accessoire[accessoireCategory.key]">
           <ng-template carouselSlide [id]="accessoire.name">
             <div class="owl-carousel-item col-md-4 col-lg-3">
