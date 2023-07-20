@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import IEquipment from 'src/app/model/equipment.model';
 import DATA from 'src/app/data';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import {RemoveEquipment, Step5} from "../../../actions/config.action";
 @Component({
   selector: 'app-step5',
   templateUrl: './step5.component.html',
@@ -61,14 +62,22 @@ export class Step5Component implements OnInit {
 
   selectCategory(category: string){
     this.selectedCategory = category
+    console.log("Nouvelle Categorie sélectionné :", this.selectedCategory)
   }
 
   toggleEquipmentSelection(equipment: IEquipment) {
     if (this.selectedEquipment[equipment.name]) {
+      if (this.selectedCategory !== null) {
       this.selectedEquipment[equipment.name] = false;
+      this.store.dispatch(RemoveEquipment({ equipment_category: this.selectedCategory, Equipment: equipment }));
+      console.log('Removed', equipment.name)
+      }
     } else {
+      if (this.selectedCategory !== null) {
+        this.store.dispatch(Step5({ equipment_category: this.selectedCategory, Equipment: equipment }));
       this.selectedEquipment[equipment.name] = true;
-      // this.store.dispatch(Step5({ equipment_category , Equipment: equipment }));
+      console.log('Added', equipment.name)
+      }
     }
   }
 

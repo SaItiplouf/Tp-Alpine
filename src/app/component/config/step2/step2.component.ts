@@ -18,13 +18,10 @@ export class Step2Component implements OnInit {
 
   ngOnInit(): void {
     this.colors = DATA.couleurs
-    this.store.pipe(select((state: State) => state.selectedCar)).subscribe(selectedCar => {
-      console.log('Selected Car:', selectedCar);
-    });
   };
 
   selectColor(Color: IColor) {
-    this.store.dispatch(Step2({ Color })); 
+    this.store.dispatch(Step2({ Color }));
     this.router.navigate(['step3']);
   }
 }
