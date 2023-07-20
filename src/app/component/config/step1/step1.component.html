@@ -1,12 +1,14 @@
-<div class="text-2xl rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 text-white h-[500px]">
-  <div class="w-full sm:w-3/4 md:w-1/2 lg:w-2/5 mb-4">
-    <h1 class="text-3xl text-center font-thin mb-4">Sélectionnez un modèle de voiture</h1>
-    <div class="flex justify-center">
-      <div *ngFor="let car of cars" class="w-1/2 pl-2 flex flex-col items-center">
-        <img [src]="car.version.picture" [alt]="'Voiture ' + car.version.id" class="w-full max-h-96 object-contain">
-        <button class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded mt-2 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectCar(car)">Sélectionner</button>
-        <p>{{car.version.name}}</p>
-        <p>{{car.version.price}} €</p>
+<div class="container mx-auto px-4 py-8 dark:bg-gray-900">
+  <h1 class="text-3xl text-center font-semibold text-white mb-4">Sélectionnez un modèle de voiture</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div *ngFor="let car of cars" class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
+      <div class="flex flex-col items-center h-full">
+        <img [src]="car.version.picture" [alt]="'Voiture ' + car.version.id" class="w-full h-48 object-cover rounded-t-lg">
+        <div class="mt-4 text-center">
+          <p class="text-xl font-semibold text-center text-gray-900 dark:text-white">{{car.version.name}}</p>
+          <p class="text-yellow-300 text-center">{{car.version.price}} €</p>
+        </div>
+        <button class="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg mt-4 dark:bg-gray-700 dark:hover:bg-gray-800" (click)="selectCar(car)">Sélectionner</button>
       </div>
     </div>
   </div>

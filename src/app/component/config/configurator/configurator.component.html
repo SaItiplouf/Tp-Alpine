@@ -1,16 +1,29 @@
 <section class="p-8">
   <h2 class="text-sm font-bold mb-4 text-left text-white">Comparateur de Voiture</h2>
+  
   <div class="flex flex-col"> <!-- Utilisez la classe "flex" pour que les composants à l'intérieur aient la même hauteur -->
-    <router-outlet></router-outlet>
 
     <ng-container *ngIf="picture !== undefined">
-      <h1 class="text-white">DZAKDZKADKJZADK</h1>
-      <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide>
-          <img [src]="picture.picturesList[0]">
-        </ng-template>
-      </owl-carousel-o>
+      <div class="flex items-center justify-center p-4"> <!-- Utilisez "md:h-screen" pour occuper la hauteur de l'écran sur les écrans de taille moyenne et plus grands -->
+        <div class="w-full md:w-4/5"> <!-- Utilisez "w-full" pour occuper toute la largeur sur les petits écrans et "md:w-4/5" sur les écrans plus grands -->
+          <div class="bg-white rounded-lg shadow-lg">
+            <owl-carousel-o [options]="customOptions">
+              <ng-container *ngFor="let imgSrc of picture.picturesList">
+                <ng-template carouselSlide>
+                  <div class="h-64 md:h-96 bg-white flex items-center justify-center"> <!-- Utilisez "h-64 md:h-96" pour définir une hauteur différente sur les petits et grands écrans -->
+                    <img [src]="imgSrc" class="max-h-full max-w-full object-scale-down p-2">
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
     </ng-container>
+
+    <router-outlet>
+      
+    </router-outlet>
 
   </div>
   <app-config-nav></app-config-nav>

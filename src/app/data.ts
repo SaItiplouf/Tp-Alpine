@@ -131,12 +131,12 @@ interface IData {
       picture: "../assets/images/configurateur/modele/selection/legende.png",
     },
      couleurs: {
-       name: "blanc glacier",
+       name: "Blanc glacier",
        price: 0,
        picture: "../assets/images/configurateur/couleurs/selection/blanc.jpg",
      },
      jantes: {
-       name: "legend",
+       name: "Legend",
        picture: "../assets/images/configurateur/jantes/selection/jante-legende.jpg",
        price: 0,
        option: "A110 Legend"
@@ -246,8 +246,14 @@ interface IData {
     {
       name: "Teinte spéciale Gendarmerie",
       picture: "../assets/images/configurateur/couleurs/selection/gendarmerie.png",
-      price: 840,
+      price: 2600,
       option : 'A110 Legend'
+    },
+    {
+      name: "Teinte exclusive Rouge",
+      picture: "../assets/images/configurateur/couleurs/selection/rouge.png",
+      price: 840,
+      option : 'A110 Pure'
     },
   ],
   sellerie: [
@@ -612,6 +618,17 @@ interface IData {
 
     {
       name: "A110 Pure",
+      color: "Teinte exclusive Rouge",
+      jante: "Standard",
+      picturesList: [
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_standard (1).png",
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_standard (2).png",
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_standard (3).png",
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_standard (4).png",
+      ]
+    },
+    {
+      name: "A110 Pure",
       color: "Teinte métallisée Noir Profond",
       jante: "Standard",
       picturesList: [
@@ -641,6 +658,17 @@ interface IData {
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (2).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (3).jpg",
         "../assets/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (4).jpg",
+      ]
+    },
+    {
+      name: "A110 Pure",
+      color: "Teinte exclusive Rouge",
+      jante: "Serac",
+      picturesList: [
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_serac (1).png",
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_serac (2).png",
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_serac (3).png",
+        "../assets/images/configurateur/modele/pure/modele_pure-couleur_rouge-jante_serac (4).png",
       ]
     },
     {
@@ -681,10 +709,10 @@ interface IData {
       color: "Teinte spéciale Gendarmerie",
       jante: "Legend",
       picturesList: [
-        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-1.jpg",
-        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-2.jpg",
-        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-3.jpg",
-        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-4.jpg",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-1.png ",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-2.png ",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-3.png ",
+        "../assets/images/configurateur/modele/legende/modele_legende-couleur_gendarmerie-jante_legende-4.png ",
       ]
     },
     {
