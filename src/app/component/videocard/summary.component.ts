@@ -1,5 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {ConfiguratorComponent} from "../config/configurator/configurator.component";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-videocard',
@@ -8,7 +8,10 @@ import {ConfiguratorComponent} from "../config/configurator/configurator.compone
 })
 export class SummaryComponent {
 
+  constructor(private router: Router) {}
+
   scrollToConfigurator() {
+    this.router.navigate(['']); // Il y avait une faute de frappe ici ("naviguate" -> "navigate")
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }
 }

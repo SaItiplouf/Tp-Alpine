@@ -23,11 +23,12 @@ export class ConfiguratorComponent implements OnInit {
     this.store.select((state) => state.reducer.selectedCar).subscribe(car => {
       this.selectedCar = car;
       console.log(this.selectedCar);
-      this.picture = DATA.pictures.filter((picture)=>{
-        if (car?.version.name == picture.name && car?.couleurs.name === picture.color && car?.jantes.name === picture.jante){
-          return picture
+      this.picture = DATA.pictures.find((picture) => {
+        if (car?.version.name === picture.name && car?.couleurs.name === picture.color && car?.jantes.name === picture.jante) {
+          console.log('Match found:', picture);
+          return true; // Retourne true si les critères sont satisfaits
         }
-      })[0]
+      });
       console.log(this.picture)
     });
 
@@ -41,9 +42,12 @@ export class ConfiguratorComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     margin: 20,
-    nav: true,
+    nav: false,
     dots: false,
     navSpeed: 600,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplaySpeed: 1000,
     navText: [
       '<i class="fa-solid fa-chevron-left fa-lg"></i>',
       '<i class="fa-solid fa-chevron-right fa-lg"></i>'
@@ -51,15 +55,6 @@ export class ConfiguratorComponent implements OnInit {
     responsive: {
       0: {
         items: 1,
-      },
-      400: {
-        items: 2,
-      },
-      760: {
-        items: 3,
-      },
-      1000: {
-        items: 4,
       },
     },
   };

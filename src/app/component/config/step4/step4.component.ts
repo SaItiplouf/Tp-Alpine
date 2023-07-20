@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Step4 } from '../../../actions/config.action';
 import ISellerie from 'src/app/model/sellerie.model';
 import DATA from 'src/app/data';
+import ICar from 'src/app/model/car.model';
 
 @Component({
   selector: 'app-step4',
@@ -12,13 +13,19 @@ import DATA from 'src/app/data';
   styleUrls: ['./step4.component.scss']
 })
 export class Step4Component {
-
+  car!:ICar;
   seats: any[] = [];
   
-  constructor(private store: Store<State>, private router: Router) {}
+  constructor(private store: Store<{ reducer: State }>, private router: Router) {}
 
   ngOnInit(): void {
     this.seats = DATA.sellerie;
+    this.store.select(state=> state.reducer.selectedCar ).subscribe(selectedCar => {
+      console.log("ici", selectedCar)
+      if (selectedCar){
+        this.car = selectedCar
+      }
+    })
   }
 
   selectSeat(Seat: ISellerie) {

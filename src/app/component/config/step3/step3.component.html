@@ -1,19 +1,18 @@
-
-<div class="text-2xl rounded-lg flex flex-wrap justify-center m-4 dark:bg-gray-900 text-white h-[500px]">
-  <div class="w-full sm:w-3/4 md:w-3/5 lg:w-2/3 mb-4">
-    <label class="text-3xl text-center font-thin mb-4">Choisissez vos jantes</label>
-    <div class="flex justify-center" *ngIf="car">
-      <ng-container *ngFor="let wheel of wheels">
-      <div *ngIf="car.version.name == wheel.option" class="w-1/2 pr-2 flex flex-col items-center">
+<div class="container mx-auto px-4 py-8 dark:bg-gray-900">
+  <h1 class="text-3xl text-center font-semibold text-white mb-4">Choisissez vos jantes</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <ng-container *ngFor="let wheel of wheels">
+      <div *ngIf="car && (car.version.name === wheel.option || wheel.option === undefined)" class="bg-white dark:bg-gray-800 rounded-lg shadow-md">
         <input type="radio" [id]="wheel.name" name="wheel" class="hidden">
-        <label [for]="wheel.name" class="block mb-2 border rounded cursor-pointer shadow-md hover:shadow-lg">
-          <img [src]="wheel.picture" [alt]="'Jante ' + wheel.name" class="w-full max-h-96 object-contain">
+        <label [for]="wheel.name" class="block overflow-hidden cursor-pointer rounded-t-lg">
+          <img [src]="wheel.picture" [alt]="'Jante ' + wheel.name" class="pt-4 w-full h-56 object-contain transition-all duration-300 transform hover:scale-105">
         </label>
-        <button class="bg-gray-800 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2" (click)="selectWheels(wheel)">Sélectionner</button>
-        <p>{{wheel.name}}</p>
-        <p>{{wheel.price}} €</p>
+        <div class="p-4">
+          <p class="text-xl font-semibold text-center text-gray-900 dark:text-white">{{wheel.name}}</p>
+          <p class="text-yellow-300 text-center">{{wheel.price}} €</p>
+          <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded mt-2 transition-all duration-300" (click)="selectWheels(wheel)">Sélectionner</button>
+        </div>
       </div>
-      </ng-container>
-    </div>
+    </ng-container>
   </div>
 </div>
